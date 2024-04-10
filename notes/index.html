@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notes App alvin </title>
+  </head>
+  <body>
+    <header>
+      <app-bar></app-bar>
+    </header>
+
+    <main>
+      <div class="container">
+        <section id="note" class="note">
+          <div class="title-section">
+            <h2 class="arsip">NotesApp API</h2>
+          </div>
+          
+          <form-input></form-input>
+          
+
+          <h2 class="arsip">Notes Tidak Ter-Arsip</h2>
+          <div id="ListContainer" class="note-list-container">
+            <div class="placeholder query-waiting">
+              Waiting for search keyword
+            </div>
+            <div class="placeholder search-loading">Waiting Notes</div>
+           
+           
+            <note-list></note-list>
+            <hr />
+          </div>
+
+         
+          <h2 class="arsip">Data Note di Arsip</h2>
+          <div id="ArchivedListContainer" class="note-list-container">
+           
+            <archived-list></archived-list>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <footer-bar></footer-bar>
+    </footer>
+  </body>
+</html>
