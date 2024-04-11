@@ -1,5 +1,5 @@
 import NotesApi from "../data/remote/notes-api.js";
-
+import "./script/view/home.js";
 class NoteItem extends HTMLElement {
   _shadowRoot = null;
   _style = null;
@@ -115,7 +115,7 @@ class NoteItem extends HTMLElement {
       NotesApi.deleteNote(this._note.id)
         .then(() => {
           this.remove();
-          NotesApi.showNotes();
+         showNotes();
         })
         .catch((error) => {
           console.error("Error deleting note:", error);
@@ -143,6 +143,8 @@ class NoteItem extends HTMLElement {
       NotesApi.archiveNote(this._note.id)
         .then(() => {
           this.remove();
+          showNote();
+          
         })
         .catch((error) => {
           console.error("Error archiving note:", error);
