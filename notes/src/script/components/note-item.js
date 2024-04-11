@@ -1,5 +1,5 @@
 import NotesApi from "../data/remote/notes-api.js";
-import "./script/view/home.js";
+import { showNote, showNotearchivedNotes } from "../view/home.js";
 class NoteItem extends HTMLElement {
   _shadowRoot = null;
   _style = null;
@@ -115,7 +115,8 @@ class NoteItem extends HTMLElement {
       NotesApi.deleteNote(this._note.id)
         .then(() => {
           this.remove();
-         showNotes();
+          showNote();
+          showNotearchivedNotes();
         })
         .catch((error) => {
           console.error("Error deleting note:", error);
