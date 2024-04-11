@@ -1,7 +1,7 @@
 import Utils from "../utils.js";
 import NotesApi from "../data/remote/notes-api.js";
 
-const home = () => {
+
   const noteListContainerElement = document.querySelector("#ListContainer");
   const noteQueryWaitingElement =
     noteListContainerElement.querySelector(".query-waiting");
@@ -41,7 +41,7 @@ const home = () => {
     .addEventListener("submit", onAddNoteHandler);
 
   // menampilkan data notes
-  const showNote = (query) => {
+  export const showNote = (query) => {
     showLoading();
     NotesApi.getNotes(query)
       .then((result) => {
@@ -53,7 +53,7 @@ const home = () => {
       });
   };
 
-  const showNotearchivedNotes = () => {
+ export  const showNotearchivedNotes = () => {
     showLoading();
     NotesApi.getArchivedNotes()
       .then((result) => {
@@ -174,6 +174,6 @@ const home = () => {
   showQueryWaiting();
   showNotearchivedNotes();
   showNote();
-};
 
-export default home;
+
+
