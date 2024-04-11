@@ -115,6 +115,7 @@ class NoteItem extends HTMLElement {
       NotesApi.deleteNote(this._note.id)
         .then(() => {
           this.remove();
+          NotesApi.showNotes();
         })
         .catch((error) => {
           console.error("Error deleting note:", error);
