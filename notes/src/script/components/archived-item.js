@@ -133,6 +133,7 @@ class archivedItem extends HTMLElement {
       SportsApi.unarchiveNote(this._note.id)
         .then(() => {
           this.remove();
+          NotesApi.showArchivedNotes();
         })
         .catch((error) => {
           console.error("Error unarchiving note:", error);
