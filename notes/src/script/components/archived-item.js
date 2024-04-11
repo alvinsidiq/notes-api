@@ -1,5 +1,5 @@
 import SportsApi from "../data/remote/notes-api.js";
-
+import "./script/view/home.js";
 class archivedItem extends HTMLElement {
   _shadowRoot = null;
   _style = null;
@@ -133,7 +133,7 @@ class archivedItem extends HTMLElement {
       SportsApi.unarchiveNote(this._note.id)
         .then(() => {
           this.remove();
-          NotesApi.showArchivedNotes();
+         showArchivedNotes();
         })
         .catch((error) => {
           console.error("Error unarchiving note:", error);
